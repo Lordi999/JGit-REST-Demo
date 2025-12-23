@@ -1,0 +1,25 @@
+meta {
+  name: Upload File
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/file/upload?repoName=jgit-playground&filePath=/README.md
+  body: multipartForm
+  auth: inherit
+}
+
+params:query {
+  repoName: jgit-playground
+  filePath: /README.md
+}
+
+body:multipart-form {
+  file: @file(/Users/tobias/GIT/jgit/~/README.md)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Add All
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8080/git/addAll?repoName=jgit-playground&branchName=firstChange
+  body: none
+  auth: inherit
+}
+
+params:query {
+  repoName: jgit-playground
+  branchName: firstChange
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

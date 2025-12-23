@@ -1,0 +1,23 @@
+meta {
+  name: Clone Repository
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/git/cloneRepo
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "repoName": "jgit-playground",
+    "url": "https://github.com/Lordi999/JGit-Demo-Playground.git"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

@@ -1,0 +1,32 @@
+meta {
+  name: Download File
+  type: http
+  seq: 3
+}
+
+get {
+  url: http://localhost:8080/file/download?repoName=jgit-playground&filePath=/readme.md
+  body: none
+  auth: inherit
+}
+
+params:query {
+  repoName: jgit-playground
+  filePath: /readme.md
+}
+
+body:json {
+  {
+    "repoName": "lordi999",
+    "filePath": "/index.html"
+  }
+}
+
+body:file {
+  file: @file(/Users/tobias/GIT/jgit/~/repos/jgit-playground/README.md) @contentType(text/markdown; charset=utf-8)
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
